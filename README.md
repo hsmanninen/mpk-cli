@@ -57,6 +57,32 @@ mpk config
 
 Use `mpk --help` and `mpk COMMAND --help` for the complete command reference.
 
+### Finnish agent skill
+
+The repository includes a Finnish
+[Agent Skills](https://agentskills.io/) compatible skill at
+[`skills/mpk-koulutushaku/`](skills/mpk-koulutushaku/). It teaches an agent to
+run bounded JSON searches, compare selected training events, fetch details
+sequentially, and provide official registration links without registering or
+opening a browser.
+
+The skill requires the `mpk` command to be installed separately. Keep this
+directory as the canonical copy and either register it or link it into the
+location used by your agent:
+
+- **OpenCode:** add this repository's `skills` directory to `skills.paths` in
+  `opencode.json`, or link `skills/mpk-koulutushaku` to
+  `~/.config/opencode/skills/mpk-koulutushaku`.
+- **Claude Code:** link or copy `skills/mpk-koulutushaku` to
+  `~/.claude/skills/mpk-koulutushaku` for personal use, or to
+  `.claude/skills/mpk-koulutushaku` in another project.
+- **OpenClaw:** when this repository is the workspace, OpenClaw discovers the
+  `skills/` directory directly. Otherwise install it with
+  `openclaw skills install ./skills/mpk-koulutushaku` from this checkout.
+
+Start a new agent session after installation. OpenCode configuration changes
+require restarting OpenCode.
+
 ### Output selection
 
 The TUI starts when stdin and stdout are TTYs, the terminal is at least 70x20,
